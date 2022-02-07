@@ -31,6 +31,9 @@ func main() {
 	// create a new serve mux and register the handlers
 	sm := mux.NewRouter()
 
+	sh1 := http.StripPrefix("/swaggerui/", http.FileServer(http.Dir("./swaggerui/")))
+	sm.PathPrefix("/swaggerui/").Handler(sh1)
+
 	// handlers for API
 	getR := sm.Methods(http.MethodGet).Subrouter()
 	getR.HandleFunc("/products", ph.ListAll)

@@ -13,7 +13,7 @@ type Product struct {
 	// the id for the product
 	//
 	// required: false
-	// min: 1
+	// min: 2
 	ID int `json:"id"` // Unique identifier for the product
 
 	// the name for this poduct
@@ -123,5 +123,12 @@ var productList = []*Product{
 		Description: "Short and strong coffee without milk",
 		Price:       1.99,
 		SKU:         "fjd34",
+	},
+	&Product{
+		ID:          3,
+		Name:        "biryani",
+		Description: "Spicy biryani with lassi, jannat",
+		Price:       1.99,
+		SKU:         "fjd35",
 	},
 }
